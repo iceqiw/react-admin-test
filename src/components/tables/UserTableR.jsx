@@ -18,7 +18,6 @@ class UserTableR extends React.Component {
         this.setState({ searchText: e.target.value });
     };
     onSearch = () => {
-        console.log(1)
         const { fetchData } = this.props;
         fetchData({ funcName: 'test', stateName: 'test' })
     };

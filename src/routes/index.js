@@ -9,7 +9,6 @@ import BasicForm from '../components/forms/BasicForm';
 import BasicTable from '../components/tables/BasicTables';
 import AdvancedTable from '../components/tables/AdvancedTables';
 import AsynchronousTable from '../components/tables/AsynchronousTable';
-import Login from '../components/pages/Login';
 import Echarts from '../components/charts/Echarts';
 import Recharts from '../components/charts/Recharts';
 import Icons from '../components/ui/Icons';
@@ -22,12 +21,14 @@ import Banners from '../components/ui/banners';
 import Drags from '../components/ui/Draggable';
 import Dashboard from '../components/dashboard/Dashboard';
 import Gallery from '../components/ui/Gallery';
-import NotFound from '../components/pages/NotFound';
 import BasicAnimations from '../components/animation/BasicAnimations';
 import ExampleAnimations from '../components/animation/ExampleAnimations';
 import AuthBasic from '../components/auth/Basic';
-import TestPage from '../views/test';
 import RouterEnter from '../components/auth/RouterEnter';
+
+import NotFound from '../views/NotFound';
+import TestPage from '../views/test';
+import Login from '../views/Login';
 
 const Wysiwyg = (location, cb) => {     // 按需加载富文本配置
     require.ensure([], require => {
@@ -37,6 +38,7 @@ const Wysiwyg = (location, cb) => {     // 按需加载富文本配置
 
 export default class CRouter extends Component {
     requireAuth = (permission, component) => {
+        console.log("vaild")
         const { store } = this.props;
         const { auth } = store.getState().httpData;
         if (!auth || !auth.data.permissions.includes(permission)) hashHistory.replace('/404');
@@ -45,9 +47,9 @@ export default class CRouter extends Component {
     render() {
         return (
             <Router history={hashHistory}>
-                <Route path={'/'} components={Page}>
+                <Route path={'/'} component={Page}>
                     <IndexRedirect to="/app/dashboard/index" />
-                    <Route path={'app'} component={App}>
+                    <Route path={'app'} component={(props) => this.requireAuth('auth/testPage', <App {...props} />)} >
                         <Route path={'view'}>
                             <Route path={'test'} component={TestPage} />
                         </Route>
