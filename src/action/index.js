@@ -3,6 +3,7 @@
  */
 import * as type from './type';
 import * as http from '../axios/index';
+import * as api from '../api/index';
 
 const requestData = category => ({
     type: type.REQUEST_DATA,
@@ -14,11 +15,6 @@ export const receiveData = (data, category) => ({
     category
 });
 
-export const receiveDataTable = (data, category) => ({
-    type: type.REQUEST_DATA_LIST,
-    data,
-    category
-});
 /**
  * 请求数据调用方法
  * @param funcName      请求接口的函数名
@@ -30,6 +26,18 @@ export const fetchData = ({funcName, params, stateName}) => dispatch => {
     return http[funcName](params).then(res => dispatch(receiveData(res, stateName)));
 };
 
+const requestDataTable = category => ({
+    type: type.REQUEST_DATA_TABLE,
+    category
+});
+
+export const receiveDataTable = (data, category) => ({
+    type: type.RECEIVE_DATA_TABLE,
+    data,
+    category
+});
+
 export const fetchDataTable = ({funcName, params, stateName}) => dispatch => {
-    return http[funcName](params).then(res => dispatch(receiveDataTable(res, stateName)));
+    dispatch(requestDataTable(stateName));
+    return api[funcName](params).then(res => dispatch(receiveDataTable(res, stateName)));
 };

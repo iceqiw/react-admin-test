@@ -22,7 +22,19 @@ const httpData = (state = {}, action) => {
                 ...state,
                 [action.category]: handleData(state[action.category], action)
             };
-        case type.REQUEST_DATA_LIST:
+        default:
+            return { ...state };
+    }
+};
+
+const tableData = (state = {}, action) => {
+    switch (action.type) {
+        case type.REQUEST_DATA_TABLE:
+            return {
+                ...state,
+                [action.category]: []
+            };
+        case type.RECEIVE_DATA_TABLE:
             return {
                 ...state,
                 [action.category]: action.data
@@ -33,5 +45,6 @@ const httpData = (state = {}, action) => {
 };
 
 export default combineReducers({
-    httpData
+    httpData,
+    tableData
 });

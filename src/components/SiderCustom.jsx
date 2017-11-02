@@ -73,13 +73,16 @@ class SiderCustom extends Component {
                     <Menu.Item key="/app/dashboard/index">
                         <Link to={'/app/dashboard/index'}><Icon type="mobile" /><span className="nav-text">首页</span></Link>
                     </Menu.Item>
+                   
                     <SubMenu
-                        key="/app/view"
-                        title={<span><Icon type="edit" /><span className="nav-text">TEST</span></span>}
+                        key="/app/train"
+                        title={<span><Icon type="edit" /><span className="nav-text">12306</span></span>}
                     >
 
-                        <Menu.Item key="/app/test"><Link to={'/app/view/test'}>TESTPAGE</Link></Menu.Item>
+                        <Menu.Item key="/app/train/searchcfg"><Link to={'/app/train/searchcfg'}>火车票查询配置</Link></Menu.Item>
                     </SubMenu>
+
+                    {/* ---------------------------demo---------------------------- */}
                     <SubMenu
                         key="/app/ui"
                         title={<span><Icon type="scan" /><span className="nav-text">UI</span></span>}

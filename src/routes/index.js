@@ -27,8 +27,9 @@ import AuthBasic from '../components/auth/Basic';
 import RouterEnter from '../components/auth/RouterEnter';
 
 import NotFound from '../views/NotFound';
-import TestPage from '../views/test';
 import Login from '../views/Login';
+
+import TrainSearch from '../views/TrainSearch';
 
 const Wysiwyg = (location, cb) => {     // 按需加载富文本配置
     require.ensure([], require => {
@@ -49,9 +50,10 @@ export default class CRouter extends Component {
             <Router history={hashHistory}>
                 <Route path={'/'} component={Page}>
                     <IndexRedirect to="/app/dashboard/index" />
-                    <Route path={'app'} component={(props) => this.requireAuth('auth/testPage', <App {...props} />)} >
-                        <Route path={'view'}>
-                            <Route path={'test'} component={TestPage} />
+                    {/* <Route path={'app'} component={(props) => this.requireAuth('auth/testPage', <App {...props} />)} > */}
+                    <Route path={'app'} component={App} >     
+                        <Route path={'train'}>
+                            <Route path={'searchcfg'} component={TrainSearch} />
                         </Route>
                         <Route path={'form'}>
                             <Route path={'basicForm'} component={BasicForm} />
