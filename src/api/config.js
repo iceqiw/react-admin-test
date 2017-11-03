@@ -4,7 +4,7 @@
  */
 
 //easy-mock模拟数据接口地址
-const HOST = 'http://localhost:8080/api/g';
+const HOST = 'api/g';
 
 export const TRAIN_CFG_GET_ONE = HOST + '/trainSearch';                           
 export const TRAIN_CFG_GET_PAGE = HOST + '/trainSearch/page';                      

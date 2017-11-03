@@ -38,8 +38,8 @@ class TrainSearch extends React.Component {
         this.setState({
             confirmLoading: true,
         });
-        api['trainCfgAdd']({...editData}).then(res => {
-            console.log(res.data)
+        api['trainCfgAdd'](editData).then(res => {
+            console.log(res)
         });
         setTimeout(() => {
             this.setState({
@@ -81,8 +81,8 @@ class TrainSearch extends React.Component {
                 >
                     <Input value={this.state.trainNo} onChange={this.changeValue.bind(this,'trainNo')} />
                     <Input value={this.state.date} onChange={this.changeValue.bind(this,'date')} />
-                    <Input value={this.state.startStation}  onChange={this.changeValue.bind(this,'startStation')} />
-                    <Input value={this.state.endStation}  onChange={this.changeValue.bind(this,'endStation')} />
+                    <Input value={this.state.startStation} onChange={this.changeValue.bind(this,'startStation')} />
+                    <Input value={this.state.endStation} onChange={this.changeValue.bind(this,'endStation')} />
                 </Modal>
             </div>
         )
