@@ -2,7 +2,7 @@
  * Created by hao.cheng on 2017/4/23.
  */
 import React from 'react';
-import { Row, Col, Card, Button,Modal,Input } from 'antd';
+import { Row, Col, Card, Button, Modal, Input } from 'antd';
 import BreadcrumbCustom from '../components/BreadcrumbCustom';
 import TrainCfgTable from '../components/tables/TrainCfgTable';
 import * as api from '../api/index';
@@ -16,13 +16,17 @@ class TrainSearch extends React.Component {
         data: [],
         visible: false
     };
+    componentDidMount() {
+        const { fetchDataTable } = this.props;
+        fetchDataTable({ funcName: 'trainCfgPage', stateName: 'traincfg' })
+    };
     onSearch = () => {
         const { fetchDataTable } = this.props;
         fetchDataTable({ funcName: 'trainCfgPage', stateName: 'traincfg' })
     };
 
-    changeValue = (type, event)=>{  
-        editData[type]= event.target.value
+    changeValue = (type, event) => {
+        editData[type] = event.target.value
         this.setState({
             ...editData
         })
@@ -63,8 +67,8 @@ class TrainSearch extends React.Component {
                         <div className="gutter-box">
                             <Card title="查询条件配置" bordered={false}>
                                 <div className="table-operations">
-                                    <Button onClick={this.onSearch}>Sort age</Button>
-                                    <Button onClick={this.showModal}>异步关闭</Button>
+                                    <Button onClick={this.onSearch}>Search</Button>
+                                    <Button onClick={this.showModal}>showModal</Button>
                                     <Button onClick={this.onSearch}>Clear filters and sorters</Button>
                                 </div>
                                 <TrainCfgTable />
@@ -79,10 +83,10 @@ class TrainSearch extends React.Component {
                     confirmLoading={this.state.confirmLoading}
                     onCancel={this.handleCancel}
                 >
-                    <Input value={this.state.trainNo} onChange={this.changeValue.bind(this,'trainNo')} />
-                    <Input value={this.state.date} onChange={this.changeValue.bind(this,'date')} />
-                    <Input value={this.state.startStation} onChange={this.changeValue.bind(this,'startStation')} />
-                    <Input value={this.state.endStation} onChange={this.changeValue.bind(this,'endStation')} />
+                    <Input placeholder="trainNo" value={this.state.trainNo} onChange={this.changeValue.bind(this, 'trainNo')} />
+                    <Input placeholder="date" value={this.state.date} onChange={this.changeValue.bind(this, 'date')} />
+                    <Input placeholder="startStation" value={this.state.startStation} onChange={this.changeValue.bind(this, 'startStation')} />
+                    <Input placeholder="endStation" value={this.state.endStation} onChange={this.changeValue.bind(this, 'endStation')} />
                 </Modal>
             </div>
         )

@@ -10,4 +10,6 @@ const HOST = target+'api/g';
 export const TRAIN_CFG_GET_ONE = HOST + '/trainSearch';                           
 export const TRAIN_CFG_GET_PAGE = HOST + '/trainSearch/page';                      
 
-export const TRAIN_CFG_POST_ADD = HOST + '/trainSearch/add';      
+export const TRAIN_CFG_POST_ADD = HOST + '/trainSearch/add'; 
+
+export const TRAIN_CFG_DEL = HOST + '/trainSearch/del/';  
