@@ -4,7 +4,8 @@
  */
 
 //easy-mock模拟数据接口地址
-const HOST = 'api/g';
+const target = process.env.NODE_ENV === 'development' ? '' : 'http://106.14.188.143';
+const HOST = target+'api/g';
 
 export const TRAIN_CFG_GET_ONE = HOST + '/trainSearch';                           
 export const TRAIN_CFG_GET_PAGE = HOST + '/trainSearch/page';                      
