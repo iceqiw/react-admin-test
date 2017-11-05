@@ -22,3 +22,9 @@ export const del = ({ url, msg = '接口异常', headers }) =>
         console.log(err);
         message.warn(msg);
     });
+
+export const put = ({ url, param, msg = '接口异常', headers }) =>
+    axios.put(url, param, headers).then(res => res.data).catch(err => {
+        console.log(err);
+        message.warn(msg);
+    });
