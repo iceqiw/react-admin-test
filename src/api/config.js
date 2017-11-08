@@ -6,9 +6,11 @@
 //easy-mock模拟数据接口地址
 const target = process.env.NODE_ENV === 'development' ? '' : 'http://106.14.188.143/';
 // java api
-const HOST = target+'api/j/admin';
+// const HOST = target+'api/j/admin';
 //golong api:
 //const HOST = target+'api/g';
+//pytyon api:
+const HOST = target+'api/p';
 
 export const WECHATMSG_GET_ONE = HOST + '/msg';   
 

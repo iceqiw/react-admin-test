@@ -38,7 +38,8 @@ class TrainCfgTable extends React.Component {
     showModal = () => {
         this.setState({
             visible: true,
-            isEdit:false
+            isEdit:false,
+            editCfg:{}
         });
     };
 
