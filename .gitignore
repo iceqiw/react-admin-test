@@ -9,7 +9,7 @@ mqtt/node_modules
 
 # testing
 /coverage
-
+build.zip
 # production
 /build
 
