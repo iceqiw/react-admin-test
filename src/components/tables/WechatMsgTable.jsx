@@ -99,6 +99,10 @@ class WechatMsgTable extends React.Component {
             dataIndex: 'keyword',
             key: 'keyword',
         }, {
+            title: '模板类型',
+            dataIndex: 'tplKey',
+            key: 'tplKey'
+        }, {
             title: '返回信息',
             dataIndex: 'content',
             key: 'content'
@@ -131,6 +135,7 @@ class WechatMsgTable extends React.Component {
                 >
                     <Input placeholder="keyword" value={this.state.editCfg.keyword} onChange={this.changeValue.bind(this, 'keyword')} />
                     <Input placeholder="content" value={this.state.editCfg.content} onChange={this.changeValue.bind(this, 'content')} />
+                    <Input placeholder="tplKey" value={this.state.editCfg.tplKey} onChange={this.changeValue.bind(this, 'tplKey')} />
                  </Modal>
             </div>
         );
