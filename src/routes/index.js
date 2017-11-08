@@ -30,6 +30,7 @@ import NotFound from '../views/NotFound';
 import Login from '../views/Login';
 
 import TrainSearch from '../views/TrainSearch';
+import WechatMsg from '../views/WechatMsg';
 
 const Wysiwyg = (location, cb) => {     // 按需加载富文本配置
     require.ensure([], require => {
@@ -54,6 +55,9 @@ export default class CRouter extends Component {
                     <Route path={'app'} component={App} >     
                         <Route path={'train'}>
                             <Route path={'searchcfg'} component={TrainSearch} />
+                        </Route>
+                        <Route path={'wechat'}>
+                            <Route path={'msg'} component={WechatMsg} />
                         </Route>
                         <Route path={'form'}>
                             <Route path={'basicForm'} component={BasicForm} />

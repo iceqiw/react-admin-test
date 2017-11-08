@@ -5,7 +5,20 @@
 
 //easy-mock模拟数据接口地址
 const target = process.env.NODE_ENV === 'development' ? '' : 'http://106.14.188.143/';
-const HOST = target+'api/g';
+// java api
+const HOST = target+'api/j/admin';
+//golong api:
+//const HOST = target+'api/g';
+
+export const WECHATMSG_GET_ONE = HOST + '/msg';   
+
+export const WECHATMSG_GET_PAGE = HOST + '/msg/page';                      
+
+export const WECHATMSG_POST_ADD = HOST + '/msg/add'; 
+
+export const WECHATMSG_DEL = HOST + '/msg/del/';  
+
+export const WECHATMSG_PUT_EDIT = HOST + '/msg/edit'; 
 
 export const TRAIN_CFG_GET_ONE = HOST + '/trainSearch';   
 

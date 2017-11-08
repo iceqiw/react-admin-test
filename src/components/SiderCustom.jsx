@@ -78,8 +78,14 @@ class SiderCustom extends Component {
                         key="/app/train"
                         title={<span><Icon type="edit" /><span className="nav-text">12306</span></span>}
                     >
-
                         <Menu.Item key="/app/train/searchcfg"><Link to={'/app/train/searchcfg'}>火车票查询配置</Link></Menu.Item>
+                    </SubMenu>
+
+                    <SubMenu
+                        key="/app/wechat"
+                        title={<span><Icon type="edit" /><span className="nav-text">微信</span></span>}
+                    >
+                        <Menu.Item key="/app/wechat/msg"><Link to={'/app/wechat/msg'}>微信消息配置</Link></Menu.Item>
                     </SubMenu>
 
                     {/* ---------------------------demo---------------------------- */}
