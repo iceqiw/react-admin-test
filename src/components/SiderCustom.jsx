@@ -86,6 +86,7 @@ class SiderCustom extends Component {
                         title={<span><Icon type="edit" /><span className="nav-text">微信</span></span>}
                     >
                         <Menu.Item key="/app/wechat/msg"><Link to={'/app/wechat/msg'}>微信消息配置</Link></Menu.Item>
+                        <Menu.Item key="/app/wechat/tpl"><Link to={'/app/wechat/tpl'}>微信模板配置</Link></Menu.Item>     
                     </SubMenu>
 
                     {/* ---------------------------demo---------------------------- */}

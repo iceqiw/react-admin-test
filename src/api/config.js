@@ -12,6 +12,7 @@ const target = process.env.NODE_ENV === 'development' ? '' : 'http://106.14.188.
 //pytyon api:
 const HOST = target+'api/p';
 
+//msg
 export const WECHATMSG_GET_ONE = HOST + '/msg';   
 
 export const WECHATMSG_GET_PAGE = HOST + '/msg/page';                      
@@ -22,6 +23,18 @@ export const WECHATMSG_DEL = HOST + '/msg/del/';
 
 export const WECHATMSG_PUT_EDIT = HOST + '/msg/edit'; 
 
+//tpl
+export const WECHATTPL_GET_ONE = HOST + '/wechatTpl';   
+
+export const WECHATTPL_GET_PAGE = HOST + '/wechatTpl/page';                      
+
+export const WECHATTPL_POST_ADD = HOST + '/wechatTpl/add'; 
+
+export const WECHATTPL_DEL = HOST + '/wechatTpl/del/';  
+
+export const WECHATTPL_PUT_EDIT = HOST + '/wechatTpl/edit'; 
+
+//train
 export const TRAIN_CFG_GET_ONE = HOST + '/trainSearch';   
 
 export const TRAIN_CFG_GET_PAGE = HOST + '/trainSearch/page';                      
